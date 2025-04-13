@@ -1,45 +1,54 @@
 package Repo;
 
 import java.sql.PreparedStatement;
+
 import Interfaces.InfUserCRUD;
 import myLibs.Mydatabase;
 import myLibs.RegularUserModules;
+import myLibs.TrainerModules;
 import myLibs.UserDetailsModules;
 import myLibs.UserModules;
 
-public class UsersRepo extends Mydatabase implements InfUserCRUD {
-
+public class UsersRepo extends Mydatabase implements InfUserCRUD{
+	// Method to insert user
 	@Override
 	public boolean Insert(UserModules userModules) {
 		boolean result = false;
 		PreparedStatement pStat;
-		String sql = "INSERT INTO Users (UserId, Password) VALUE (?, ?);"; //Insert
+		String sql = "INSERT INTO Users (UserId, Password) VALUE (?, ?);";
 
 		try {
-			//Connection with Database
 			pStat = connect().prepareStatement(sql);
-
-			pStat.setInt(1, userModules.getUserId());
-			pStat.setString(2, userModules.getPassword());
-
+			
+			pStat.setInt(1,userModules.getUserId());
+			pStat.setString(2,userModules.getPassword());
+			
 			pStat.executeUpdate();
 			pStat.close();
 			result = true;
-
-		} catch (Exception ex) {
-			System.out.println("Error : " + ex.getMessage());
+			
+		}catch(Exception ex) {
+			System.out.println("Error : " +ex.getMessage());
 		}
-
-		return result;
+		
+		return result ;
+		
 	}
 
 	@Override
 	public boolean Insert(UserDetailsModules userDetailsModules) {
 		return false;
 	}
+
 	@Override
 	public boolean Insert(RegularUserModules regularUserModules) {
 		return false;
 	}
+
+	@Override
+	public boolean Insert(TrainerModules trainerModules) {
+		return false;
+	}
+
 
 }
