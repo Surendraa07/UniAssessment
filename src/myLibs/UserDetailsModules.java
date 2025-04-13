@@ -1,36 +1,42 @@
 package myLibs;
 
 public class UserDetailsModules {
+	private int uid;
 	private String name;
 	private int age;
 	private String weight;
 	private String height;
-	
-	//Parameterized Constructor
-	public UserDetailsModules(String name, int age, String weight, String height) {
+	public UserDetailsModules(int uid, String name, int age, String weight, String height) {//Parameterized constructor
+		super();
+		this.uid = uid;
 		this.name = name;
 		this.age = age;
 		this.weight = weight;
 		this.height = height;
 	}
-	
-	//Default Constructor
-	public UserDetailsModules() {
+	public UserDetailsModules() {//default constructor
+		super();
+		this.uid = 0;
 		this.name = "";
 		this.age = 0;
 		this.weight = "";
 		this.height = "";
 	}
-	
-	//Copy Constructor
-	public UserDetailsModules(UserDetailsModules userDetailsModules) {
-		this.name = userDetailsModules.name;
+	public UserDetailsModules(UserDetailsModules userDetailsModules) {// copy constructor
+		super();
+		this.uid =userDetailsModules.uid;
+		this.name =userDetailsModules.name;
 		this.age = userDetailsModules.age;
 		this.weight = userDetailsModules.weight;
 		this.height = userDetailsModules.height;
 	}
-	
-	//Getters and Setters
+	//getters and setters
+	public int getUid() {
+		return uid;
+	}
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
 	public String getName() {
 		return name;
 	}
@@ -54,6 +60,8 @@ public class UserDetailsModules {
 	}
 	public void setHeight(String height) {
 		this.height = height;
-
 	}
+
+	
 }
+
