@@ -1,30 +1,28 @@
 package myLibs;
 
 public class RegularUserModules {
+	//fields to store
 	private String annualGoal;
 	private String annualSchedule;
-	private String benefits;
 
-	//Parameterized Constructor
-	public RegularUserModules(String annualGoal, String annualSchedule, String benefits) {
+	public RegularUserModules(String annualGoal, String annualSchedule) {//Parameterized constructor
+
 		this.annualGoal = annualGoal;
 		this.annualSchedule = annualSchedule;
-		this.benefits = benefits;
-	}
-	//Default Constructor
-	public RegularUserModules() {		
-			this.annualGoal = "";
-			this.annualSchedule = "";
-			this.benefits = "";
-	}
-	//Copy Constructor
-	public RegularUserModules(RegularUserModules regularUserModules) {
-		this.annualGoal = regularUserModules.annualGoal;
-		this.annualSchedule = regularUserModules.annualSchedule;
-		this.benefits = regularUserModules.benefits;
 	}
 
-	//Setters and Getters
+	public RegularUserModules() {//Default constructor
+
+		this.annualGoal = "";
+		this.annualSchedule = "";
+	}
+
+	public RegularUserModules(RegularUserModules regularUserModules) {//Copy Constructor
+
+		this.annualGoal = regularUserModules.annualGoal;
+		this.annualSchedule = regularUserModules.annualSchedule;
+	}
+	//getters and setters
 	public String getAnnualGoal() {
 		return annualGoal;
 	}
@@ -40,15 +38,5 @@ public class RegularUserModules {
 	public void setAnnualSchedule(String annualSchedule) {
 		this.annualSchedule = annualSchedule;
 	}
-
-	public String getBenefits() {
-		return benefits;
-	}
-
-	public void setBenefits(String benefits) {
-		this.benefits = benefits;
-	}
-
-
 
 }
