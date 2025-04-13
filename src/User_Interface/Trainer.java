@@ -117,3 +117,4 @@ public class Trainer extends Application {
         launch(args);
     }
 }
+
